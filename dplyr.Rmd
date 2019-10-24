@@ -1,0 +1,37 @@
+---
+title: "dplyr-practice"
+author: "Daniel Suryakusuma"
+date: "10/19/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practicing dplyr
+
+```{r}
+library(dbplyr)
+library(dplyr)
+library(RPostgres)
+
+# library(RSQLite) # automatically included in R
+```
+
+```{r}
+
+con <- DBI::dbConnect(RSQLite::RSQLite(), # database backend
+                      dbname = ":memory:" # temporary in-memory database 
+                      ) # 
+```
+
+
+```{r}
+con <- DBI::dbConnect(RPostgres::Postgres(), 
+    host = "",
+    user = "",
+    password = rstudioapi::askForPassword("Database Password"))
+
+```
+
